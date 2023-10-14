@@ -26,7 +26,6 @@ const passwordValidate = (password = "")=>{
     let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/;
 
     if(!regex.test(password) || password.length < 8 ){
-        console.log("paso por aqui")
         throw new Error("La contraseña debe tener 8 caracteres con al menos una mayuscula, una minuscula y un numero")
     }
 
@@ -36,10 +35,7 @@ const passwordValidate = (password = "")=>{
 
 const idExist = async (id)=>{
 
-    console.log(id)
     const idExistInDB = await User.findById(id);
-
-    console.log("el id existe en la BD: ", idExistInDB)
 
     if(!idExistInDB){
         throw new Error (` El id ${id} no existe en la BD`)

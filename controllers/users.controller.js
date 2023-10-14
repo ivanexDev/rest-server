@@ -13,7 +13,6 @@ const usersGet = async (req = request, res)=> {
         if(parsedPage == 1){
             return 0
         }else{
-            console.log((parsedPage-1)*10)
             return (parsedPage-1)*10
         }
     }
