@@ -89,10 +89,12 @@ const usersPatch = async (req, res)=> {
 const usersDelete = async (req, res)=> {
 
     const {id} = req.params
+    console.log(id)
     // Para eliminar fisicamente el usuario de la BD
     // const deletedUser = await User.findByIdAndDelete(id)
 
     const usuario = await User.findByIdAndUpdate(id, {state: false})
+    console.log(usuario)
 
     res.json({
         msg: "usuario borrado existosamente",
